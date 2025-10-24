@@ -30,54 +30,22 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div
-          style={{
-            backgroundColor: '#0b0b0b',
-            color: '#00ff99',
-            minHeight: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-            fontFamily: "'Orbitron', sans-serif",
-            padding: '2rem',
-          }}
-        >
+        <div className="flex flex-col items-center justify-center min-h-screen bg-black text-green-400 text-center font-mono px-6">
           <img
-            src="https://media.giphy.com/media/Uq5Jfi0bM4JgaN7Dqj/giphy.gif"
+            src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExanVtMWFubzR5djJ3MzV0OXhjZnlyenk2ZzNhNjkwZjN0Z2wwNjQ4ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vFtGDTXTNr4Z3uG4St/giphy.gif"
             alt="Rick and Morty glitch"
-            style={{
-              width: '500px',
-              borderRadius: '12px',
-              marginBottom: '1.5rem',
-            }}
+            className="w-100 rounded-xl mb-6 shadow-[0_0_25px_#00ff99]"
           />
-          <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>
+          <h2 className="text-3xl font-bold mb-3">
             Oops... something broke in the multiverse!
           </h2>
-          <p style={{ maxWidth: '500px', marginBottom: '1.5rem' }}>
+          <p className="max-w-lg mb-6 text-green-300">
             Looks like Morty pressed the wrong button again. Don’t worry. You
-            can try to reload and stabilize this dimension.
+            can try reloading and stabilize this dimension.
           </p>
           <button
             onClick={() => this.setState({ hasError: false })}
-            style={{
-              backgroundColor: '#00ff99',
-              color: '#0b0b0b',
-              padding: '0.8rem 1.5rem',
-              fontSize: '1rem',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              transition: 'transform 0.2s ease-in-out',
-            }}
-            onMouseOver={(e) =>
-              ((e.target as HTMLButtonElement).style.transform = 'scale(1.05)')
-            }
-            onMouseOut={(e) =>
-              ((e.target as HTMLButtonElement).style.transform = 'scale(1)')
-            }
+            className="bg-green-400 text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transform transition-all duration-200 shadow-[0_0_20px_#00ff99]"
           >
             Try Again
           </button>
